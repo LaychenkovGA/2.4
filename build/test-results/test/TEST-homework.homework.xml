@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="homework.homework" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-10T14:21:10" hostname="MASTER_BUROKKU" time="20.425">
+<testsuite name="homework.homework" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-10T17:19:59" hostname="MASTER_BUROKKU" time="13.043">
   <properties/>
-  <testcase name="emptyField()" classname="homework.homework" time="7.99"/>
-  <testcase name="testNewTab()" classname="homework.homework" time="12.435"/>
+  <testcase name="testNewTab()" classname="homework.homework" time="13.043"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[нояб. 10, 2024 6:21:15 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
-INFO: Detected dialect: W3C
-нояб. 10, 2024 6:21:22 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+  <system-err><![CDATA[нояб. 10, 2024 9:20:03 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
