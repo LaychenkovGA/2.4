@@ -15,6 +15,7 @@ import ru.netology.qa.screens.MainScreenUIAutomator;
 public class UIAutomatorTest {
 
     private AndroidDriver driver;
+    private MainScreenUIAutomator mainScreenUIAutomator;
 
     private URL getUrl() {
         try {
@@ -38,37 +39,36 @@ public class UIAutomatorTest {
         desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
         desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
 
-
         driver = new AndroidDriver(getUrl(), desiredCapabilities);
+
+        mainScreenUIAutomator = new MainScreenUIAutomator(driver);
     }
 
     @Test
     public void testEmptyString() {
-        MainScreenUIAutomator main = new MainScreenUIAutomator(driver);
 
-        main.userInput.isDisplayed();
-        main.userInput.click();
-        String text1 = main.textToBeChanged.getText();
-        main.userInput.sendKeys(" ");
-        main.buttonChange.isDisplayed();
-        main.buttonChange.click();
-        String text2 = main.textToBeChanged.getText();
+        mainScreenUIAutomator.userInput.isDisplayed();
+        mainScreenUIAutomator.userInput.click();
+        String text1 = mainScreenUIAutomator.textToBeChanged.getText();
+        mainScreenUIAutomator.userInput.sendKeys(" ");
+        mainScreenUIAutomator.buttonChange.isDisplayed();
+        mainScreenUIAutomator.buttonChange.click();
+        String text2 = mainScreenUIAutomator.textToBeChanged.getText();
         Assertions.assertEquals(text1, text2);
 
     }
 
     @Test
     public void testNewActivity() {
-        MainScreenUIAutomator main = new MainScreenUIAutomator(driver);
 
-        main.userInput.isDisplayed();
-        main.userInput.click();
+        mainScreenUIAutomator.userInput.isDisplayed();
+        mainScreenUIAutomator.userInput.click();
         String newText = "TuToK";
-        main.userInput.sendKeys((newText));
-        main.buttonActivity.isDisplayed();
-        main.buttonActivity.click();
-        main.activityText.isDisplayed();
-        Assertions.assertEquals(main.activityText.getText(), newText);
+        mainScreenUIAutomator.userInput.sendKeys((newText));
+        mainScreenUIAutomator.buttonActivity.isDisplayed();
+        mainScreenUIAutomator.buttonActivity.click();
+        mainScreenUIAutomator.activityText.isDisplayed();
+        Assertions.assertEquals(mainScreenUIAutomator.activityText.getText(), newText);
 
     }
 
